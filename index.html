@@ -3,37 +3,131 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday, Joy ✨🐉</title>
+<title>Happy Birthday, Joy 🐉💙</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&display=swap');
 
 body {
     margin: 0;
     height: 100vh;
-    font-family: 'Playfair Display', serif;
-    color: #eef4ff;
+    font-family: 'Cinzel', serif;
+    color: #eaf6ff;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 
     background:
-        linear-gradient(rgba(15,20,50,0.55), rgba(10,15,40,0.8)),
-        url("https://images.unsplash.com/photo-1526318472351-c75fcf070305?auto=format&fit=crop&w=1600&q=80");
+      linear-gradient(rgba(10,15,30,0.65), rgba(10,15,30,0.65)),
+      url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80");
     background-size: cover;
     background-position: center;
     overflow: hidden;
 }
 
-.content {
-    max-width: 760px;
+.container {
+    max-width: 750px;
     padding: 40px;
-    animation: fadeIn 2.5s ease forwards;
-    text-shadow: 0 0 12px rgba(0,0,0,0.6);
+    animation: fadeIn 3s ease forwards;
 }
 
 h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+    color: #b8dcff;
+    text-shadow:
+      0 0 15px #6fa8ff,
+      0 0 30px #3b6ddf;
+}
+
+.message {
+    font-size: 1.35rem;
+    line-height: 1.9;
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+/* Floating petals (myosotis feel) */
+.petal {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #a8d8ff;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: float 12s linear infinite;
+    box-shadow: 0 0 10px #bfe6ff;
+}
+
+@keyframes float {
+    from { transform: translateY(110vh); }
+    to { transform: translateY(-10vh); }
+}
+
+/* Dragon glow */
+.dragon-glow {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 70% 40%, rgba(120,170,255,0.25), transparent 50%);
+    pointer-events: none;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Audio controls styling */
+audio {
+    margin-top: 25px;
+    width: 260px;
+    filter: drop-shadow(0 0 8px #6fa8ff);
+}
+</style>
+</head>
+
+<body>
+
+<div class="dragon-glow"></div>
+
+<div class="container">
+    <h1>Happy Birthday, Joy 🐉💙</h1>
+
+    <p class="message">
+        Like forget-me-nots blooming beneath dragon skies,<br>
+        your kindness and strength are never forgotten.<br><br>
+
+        May this year carry you on gentle wings —<br>
+        through wonder, courage, laughter, and light.<br><br>
+
+        The world is brighter because you are in it.<br>
+        Happy Birthday, Joy ✨
+    </p>
+
+    <!-- Soundtrack -->
+    <audio controls autoplay loop>
+        <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_7c9c0e49cb.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+
+<script>
+/* Create floating myosotis petals */
+for (let i = 0; i < 50; i++) {
+    const petal = document.createElement("div");
+    petal.className = "petal";
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.animationDuration = 8 + Math.random() * 8 + "s";
+    petal.style.opacity = Math.random();
+    document.body.appendChild(petal);
+}
+</script>
+
+</body>
+</html>
     font-family: 'Great Vibes', cursive;
     font-size: 4.2rem;
     margin-bottom: 20px;
