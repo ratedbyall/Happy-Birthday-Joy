@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Joy ✨🐉</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Great+Vibes&display=swap');
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Playfair Display', serif;
+    color: #eef4ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    /* Dragon + floral fantasy background */
+    background:
+        linear-gradient(rgba(10,15,40,0.6), rgba(10,15,40,0.8)),
+        url("https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 720px;
+    padding: 40px;
+    background: rgba(20, 30, 60, 0.55);
+    border-radius: 18px;
+    box-shadow: 0 0 30px rgba(120,150,255,0.4);
+    animation: fadeIn 2.5s ease forwards;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: #cfe0ff;
+    text-shadow: 0 0 15px #7aa2ff;
+}
+
+.message {
+    font-size: 1.35rem;
+    line-height: 1.8;
+}
+
+.message span {
+    color: #9fb8ff;
+}
+
+/* floating petals / sparks */
+.petal {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #a9c6ff;
+    border-radius: 50%;
+    opacity: 0.8;
+    box-shadow: 0 0 10px #a9c6ff;
+    animation: float 8s linear infinite;
+}
+
+@keyframes float {
+    from { transform: translateY(110vh) translateX(0); }
+    to { transform: translateY(-10vh) translateX(40px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* audio control styling */
+.audio-control {
+    margin-top: 25px;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Happy Birthday, Joy 🐉✨</h1>
+
+    <p class="message">
+        Like myosotis blooming beneath moonlight,<br>
+        may your memories always glow with kindness and wonder 🌸<br><br>
+
+        Today, dragons guard your dreams and skies open wide for you —<br>
+        fierce heart, gentle soul, and a spirit that never forgets beauty.<br><br>
+
+        Wishing you a year filled with magic, courage, and moments worth remembering 💙
+    </p>
+
+    <div class="audio-control">
+        🎶 Music plays softly in the background
+    </div>
+</div>
+
+<!-- Background music -->
+<audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/10/30/audio_7f5c9a7d54.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<!-- Floating petals -->
+<script>
+for (let i = 0; i < 40; i++) {
+    const p = document.createElement("div");
+    p.className = "petal";
+    p.style.left = Math.random() * 100 + "vw";
+    p.style.animationDuration = 5 + Math.random() * 6 + "s";
+    p.style.animationDelay = Math.random() * 5 + "s";
+    document.body.appendChild(p);
+}
+</script>
+
+</body>
+</html>
